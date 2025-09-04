@@ -31,10 +31,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><button class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
@@ -46,9 +46,9 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Navya Pai</h1>
-            <p class="hero-subtitle">Software Engineer </p>
+            <p class="hero-subtitle">Software Engineer & Full-Stack Developer</p>
             <p class="hero-location">📍 Austin, Texas</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <a href="#" class="cta-button" id="resume-btn">View Resume</a>
         </div>
     </section>
 
@@ -57,82 +57,38 @@
         <div class="container">
             <h2 class="section-title fade-in">About Me</h2>
             <div class="about-content fade-in">
-                <div class="about-image">
-                    <i class="fas fa-user"></i>
-                </div>
                 <div class="about-text">
                     <p>I'm a passionate Software Engineer with a Master's in Computer Science from Stevens Institute of Technology. With over 3 years of professional experience spanning DevOps automation, full-stack development, and machine learning, I specialize in creating efficient, scalable solutions that drive business value.</p>
                     
                     <p>My journey began at Infosys Ltd, where I automated legacy build pipelines and reduced deployment errors by 50%. Currently based in Austin, TX, I'm passionate about leveraging modern technologies to solve complex problems and contribute to innovative projects.</p>
-                    
-                    <div class="highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <h4>Master's Degree</h4>
-                            <p>Computer Science (GPA: 3.9)</p>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-code"></i>
-                            <h4>3+ Years Experience</h4>
-                            <p>Professional Software Development</p>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-cloud"></i>
-                            <h4>DevOps Expertise</h4>
-                            <p>CI/CD & Cloud Platforms</p>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-users"></i>
-                            <h4>Community Active</h4>
-                            <p>CodePath & Rewriting the Code</p>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section education">
-        <div class="container">
-            <h2 class="section-title fade-in">Education</h2>
-            <div class="education-grid fade-in">
-                <div class="education-card">
-                    <div class="degree">Master of Science in Computer Science</div>
-                    <div class="university">Stevens Institute of Technology</div>
-                    <div class="education-details">Jan 2023 – Aug 2024 | Hoboken, NJ</div>
-                    <div class="gpa">GPA: 3.9</div>
-                    <p><strong>Honors:</strong> Noodle Scholarship</p>
-                    <p><strong>Relevant Coursework:</strong> Algorithms, Web Development, Database Management Systems, Applied Machine Learning, Mobile Applications, Human-Computer Interaction, Agile Methods for Software Development</p>
-                </div>
-
-                <div class="education-card">
-                    <div class="degree">Bachelor of Engineering in Computer Science</div>
-                    <div class="university">Visvesvaraya Technological University (VTU)</div>
-                    <div class="education-details">Aug 2015 – Dec 2019 | Udupi, India</div>
-                    <p><strong>Focus:</strong> Computer Science fundamentals, software engineering principles, and practical application development</p>
-                </div>
-            </div>
-
-            <div class="certifications-section">
-                <h3>Certifications & Communities</h3>
-                <div class="certifications-grid">
-                    <div class="cert-item">
-                        <i class="fab fa-microsoft"></i>
-                        Microsoft Azure Fundamentals (AZ900)
+                
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Master's Degree</h4>
+                        <p>Computer Science (GPA: 3.9)</p>
                     </div>
-                    <div class="cert-item">
-                        <i class="fas fa-users"></i>
-                        CodePath Member
-                    </div>
-                    <div class="cert-item">
+                    <div class="highlight-item">
                         <i class="fas fa-code"></i>
-                        Rewriting the Code
+                        <h4>3+ Years Experience</h4>
+                        <p>Professional Software Development</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-cloud"></i>
+                        <h4>DevOps Expertise</h4>
+                        <p>CI/CD & Cloud Platforms</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Community Active</h4>
+                        <p>CodePath & Rewriting the Code</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
@@ -206,6 +162,48 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            <div class="education-grid fade-in">
+                <div class="education-card">
+                    <div class="degree">Master of Science in Computer Science</div>
+                    <div class="university">Stevens Institute of Technology</div>
+                    <div class="education-details">Jan 2023 – Aug 2024 | Hoboken, NJ</div>
+                    <div class="gpa">GPA: 3.9</div>
+                    <p><strong>Honors:</strong> Noodle Scholarship</p>
+                    <p><strong>Relevant Coursework:</strong> Algorithms, Web Development, Database Management Systems, Applied Machine Learning, Mobile Applications, Human-Computer Interaction, Agile Methods for Software Development</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="degree">Bachelor of Engineering in Computer Science</div>
+                    <div class="university">Visvesvaraya Technological University (VTU)</div>
+                    <div class="education-details">Aug 2015 – Dec 2019 | Udupi, India</div>
+                    <p><strong>Focus:</strong> Computer Science fundamentals, software engineering principles, and practical application development</p>
+                </div>
+            </div>
+
+            <div class="certifications-section">
+                <h3>Certifications & Communities</h3>
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <i class="fab fa-microsoft"></i>
+                        Microsoft Azure Fundamentals (AZ900)
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-users"></i>
+                        CodePath 
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-code"></i>
+                        Rewriting the Code
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="section experience">
         <div class="container">
@@ -270,12 +268,12 @@
                             </ul>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/nvpai/no-food-waste" class="project-link">
+                            <a href="#" class="project-link">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
-                            <!-- <a href="#" class="project-link">
+                            <a href="#" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a> -->
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -308,9 +306,9 @@
                             <a href="#" class="project-link">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
-                            <!-- <a href="#" class="project-link">
+                            <a href="#" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a> -->
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -343,9 +341,9 @@
                             <a href="#" class="project-link">
                                 <i class="fab fa-figma"></i> Figma
                             </a>
-                            <!-- <a href="#" class="project-link">
+                            <a href="#" class="project-link">
                                 <i class="fas fa-eye"></i> Prototype
-                            </a> -->
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -378,16 +376,15 @@
                             <a href="#" class="project-link">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
-                            <!-- <a href="#" class="project-link">
+                            <a href="#" class="project-link">
                                 <i class="fas fa-file-pdf"></i> Research Paper
                             </a>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">

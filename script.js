@@ -102,29 +102,28 @@ class NavigationManager {
 
     setupMobileMenu() {
         this.mobileMenuBtn.addEventListener('click', () => {
-            const isVisible = this.navLinks.style.display === 'flex';
-            
-            if (isVisible) {
-                this.navLinks.style.display = 'none';
-            } else {
-                this.navLinks.style.display = 'flex';
-                this.navLinks.style.position = 'absolute';
-                this.navLinks.style.top = '100%';
-                this.navLinks.style.left = '0';
-                this.navLinks.style.right = '0';
-                this.navLinks.style.background = 'var(--bg-primary)';
-                this.navLinks.style.flexDirection = 'column';
-                this.navLinks.style.padding = '1rem';
-                this.navLinks.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-                this.navLinks.style.borderRadius = '0 0 10px 10px';
-            }
+            this.navLinks.classList.toggle('active');
         });
 
         // Close mobile menu when clicking on a link
         this.navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                this.navLinks.style.display = 'none';
+                this.navLinks.classList.remove('active');
             });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!this.navbar.contains(e.target)) {
+                this.navLinks.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                this.navLinks.classList.remove('active');
+            }
         });
     }
 }
@@ -586,7 +585,10 @@ class ResumeManager {
     }
 
     downloadResume() {
-        // In a real implementation, this would download the actual PDF
+        // In a real implementation, replace this URL with your actual resume PDF link
+        const resumeUrl = 'https://drive.google.com/file/d/1qBFfNkCAHCckoa8q3F79VRRcESCuDetN/view?usp=sharing'; // Replace with your actual resume link
+        
+        // For demonstration, we'll show a notification
         const notification = document.createElement('div');
         notification.innerHTML = `
             <div style="
@@ -602,7 +604,7 @@ class ResumeManager {
                 animation: slideInRight 0.5s ease;
             ">
                 <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
-                Resume download feature - Add link to your actual PDF here
+                Floating resume download - Replace URL in script.js with your actual resume link
             </div>
         `;
         
@@ -612,7 +614,10 @@ class ResumeManager {
             notification.remove();
         }, 4000);
         
-        console.log('Resume download requested');
+        //Uncomment the line below when you have a real resume URL
+         window.open(resumeUrl, '_blank', 'noopener,noreferrer');
+        
+        console.log('Floating resume download requested');
     }
 }
 
