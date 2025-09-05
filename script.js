@@ -384,31 +384,83 @@ class ProjectManager {
         const projectLinks = document.querySelectorAll('.project-link');
         
         projectLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.handleProjectLink(link);
-            });
+            // Check if link has real-link class (indicating it's a real URL)
+            if (link.classList.contains('real-link')) {
+                // Let the browser handle real links naturally
+                link.addEventListener('click', (e) => {
+                    // Add some visual feedback
+                    this.showLinkClickFeedback(link);
+                    // Don't prevent default - let the link work normally
+                });
+            } else {
+                // Handle placeholder links
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.handlePlaceholderLink(link);
+                });
+            }
         });
     }
+    showLinkClickFeedback(link) {
+        // Add visual feedback when clicking real links
+        link.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            link.style.transform = 'scale(1)';
+        }, 150);
+        
+        // Optional: Show success message
+        // const linkText = link.textContent.trim();
+        // const projectTitle = link.closest('.project-card').querySelector('.project-title').textContent;
+        
+        // this.showSuccessNotification(`Opening ${linkText} for "${projectTitle}"...`);
+    }
 
-    handleProjectLink(link) {
+    handlePlaceholderLink(link) {
         const linkText = link.textContent.trim();
         const projectTitle = link.closest('.project-card').querySelector('.project-title').textContent;
         
-        // In a real implementation, these would link to actual projects
-        const message = `${linkText} for "${projectTitle}" - This would link to the actual project/repository`;
+        // Show message for placeholder links
+        const message = `${linkText} for "${projectTitle}" - Please update this link in your HTML`;
         
-        this.showProjectLinkNotification(message);
+        this.showPlaceholderNotification(message);
     }
-
-    showProjectLinkNotification(message) {
+    showSuccessNotification(message) {
         const notification = document.createElement('div');
         notification.innerHTML = `
             <div style="
                 position: fixed;
                 top: 100px;
                 right: 20px;
-                background: var(--primary-color);
+                background: #10b981;
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 1002;
+                max-width: 300px;
+                animation: slideInRight 0.5s ease;
+            ">
+                <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                ${message}
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+
+
+    showPlaceholderNotification(message) {
+        const notification = document.createElement('div');
+        notification.innerHTML = `
+            <div style="
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: #f59e0b;
                 color: white;
                 padding: 1rem 1.5rem;
                 border-radius: 8px;
