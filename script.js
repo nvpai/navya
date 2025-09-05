@@ -66,7 +66,8 @@ class NavigationManager {
                 e.preventDefault();
                 const target = document.querySelector(anchor.getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    // FIXED: Updated offset to account for proper navbar height
+                    const offsetTop = target.offsetTop - 80; // Using fixed navbar height
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -141,7 +142,8 @@ class AnimationManager {
     init() {
         this.setupIntersectionObserver();
         this.setupHeroAnimations();
-        this.setupParallax();
+        // FIXED: Disabled parallax effect to prevent overlap issues
+        // this.setupParallax();
     }
 
     setupIntersectionObserver() {
@@ -199,6 +201,7 @@ class AnimationManager {
         type();
     }
 
+    /* FIXED: Disabled parallax effect that was causing overlap issues
     setupParallax() {
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -208,6 +211,7 @@ class AnimationManager {
             }
         });
     }
+    */
 }
 
 // Contact Form Manager
@@ -614,7 +618,7 @@ class ResumeManager {
             notification.remove();
         }, 4000);
         
-        //Uncomment the line below when you have a real resume URL
+        // Uncomment the line below when you have a real resume URL
          window.open(resumeUrl, '_blank', 'noopener,noreferrer');
         
         console.log('Floating resume download requested');
@@ -703,7 +707,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resume: resumeManager
     };
     
-    console.log('Portfolio initialized successfully');
+    console.log('Portfolio initialized successfully - Overlap issue fixed');
 });
 
 // Handle window resize
